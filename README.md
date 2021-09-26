@@ -1,5 +1,4 @@
 # Tienda
-App
 es un proyecto libre en el cual se desea añadir nuevos vendedores y nuevos clientes a la empresa COMPUTEC mediante un registro simple, la aplicacion permite añadir productos editar y eliminar
 si eres vendedor, si eres administrador puedes depurar vendedores incluyendo sus productos, todo esto esta manejado mediante el motor firebase, el cual administra todo el flujo de la aplicacion.
 
