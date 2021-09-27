@@ -11,7 +11,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="237dp"
-
+        android:onClick="validators"
         android:background="@drawable/curvas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +49,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/correolog"
                 android:layout_width="505dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
@@ -95,6 +96,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contralog"
                 android:layout_width="505dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"

@@ -40,7 +40,7 @@
             android:id="@+id/materialButton"
             android:layout_width="320dp"
             android:layout_height="70dp"
-
+            android:onClick="validators"
             android:layout_marginTop="11dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/comic"
@@ -84,6 +84,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contralog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
@@ -162,6 +163,7 @@
             app:startIconTint="@android:color/darker_gray">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/correolog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
