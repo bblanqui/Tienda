@@ -47,6 +47,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
@@ -88,6 +89,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
@@ -128,6 +130,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
@@ -149,6 +152,7 @@
             android:layout_height="71dp"
 
             android:fontFamily="@font/comic"
+            android:onClick="validaciones"
             android:text="Registrarse"
             android:textColor="@color/black"
             android:textSize="16sp"

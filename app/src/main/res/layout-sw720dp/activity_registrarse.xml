@@ -49,6 +49,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usuario"
                 android:layout_width="609dp"
                 android:layout_height="109dp"
                 android:fontFamily="@font/comic"
@@ -89,6 +90,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pass"
                 android:layout_width="609dp"
                 android:layout_height="109dp"
                 android:fontFamily="@font/comic"
@@ -157,7 +159,7 @@
             android:id="@+id/materialButton2"
             android:layout_width="609dp"
             android:layout_height="109dp"
-
+            android:onClick="validaciones"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/comic"
             android:text="Registrarse"
@@ -198,6 +200,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/correo"
                 android:layout_width="609dp"
                 android:layout_height="109dp"
                 android:fontFamily="@font/comic"
@@ -249,13 +252,14 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="582dp"
-        android:layout_height="410dp"
+        android:layout_width="429dp"
+        android:layout_height="308dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toEndOf="@+id/guideline19"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_undraw_my_app_re_gxtj" />
 
     <androidx.constraintlayout.widget.Guideline
