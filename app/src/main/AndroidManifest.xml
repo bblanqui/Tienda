@@ -9,9 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tienda">
-        <activity android:name="com.brian.tienda.Registrarse"></activity>
+        <activity android:name="com.brian.tienda.splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.brian.tienda.inicio" />
+        <activity android:name="com.brian.tienda.Registrarse" />
         <activity android:name="com.brian.tienda.login" />
         <activity android:name="com.brian.tienda.singups" />
+
         <activity
             android:name="com.brian.tienda.getstart"
             android:exported="true">
