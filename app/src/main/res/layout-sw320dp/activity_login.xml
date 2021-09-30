@@ -18,7 +18,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.500684"
+        app:layout_constraintGuide_percent="0.52"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -39,13 +39,14 @@
 
             android:id="@+id/materialButton"
             android:layout_width="320dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_height="70dp"
             android:onClick="validators"
             android:layout_marginTop="11dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/comic"
             android:text="Login"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
@@ -53,32 +54,35 @@
             app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-            app:strokeColor="@color/black">
+            app:strokeColor="?attr/colorOnPrimary">
 
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/CustomOutlineBox"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:hint="password"
-            app:helperTextEnabled="true"
-            app:helperText="8 caracteres sin espacios en blanco"
-            app:helperTextTextColor="@android:color/darker_gray"
+
             android:textColorHint="@android:color/darker_gray"
+
+
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/black"
             app:counterEnabled="true"
             app:counterMaxLength="70"
             app:counterTextColor="@android:color/darker_gray"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/black"
+            app:endIconTint="?attr/colorOnPrimary"
+            app:helperText="8 caracteres sin espacios en blanco"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@android:color/darker_gray"
             app:hintEnabled="true"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="?attr/colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayouts"
             app:layout_constraintVertical_bias="0.0"
@@ -99,7 +103,7 @@
                 android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:hintTextColor="@color/black">
+                app:hintTextColor="?attr/colorOnPrimary">
 
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -142,22 +146,24 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayouts"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/CustomOutlineBox"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="correo@example.com"
+
+
+
             android:textColorHint="@android:color/darker_gray"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/black"
             app:counterEnabled="true"
             app:counterMaxLength="70"
             app:counterTextColor="@android:color/darker_gray"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/black"
+            app:endIconTint="?attr/colorOnPrimary"
             app:hintEnabled="true"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="?attr/colorOnPrimary"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -172,9 +178,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="20sp"
-                app:hintTextColor="@color/black">
+
+                app:hintTextColor="?attr/colorOnPrimary">
 
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -233,7 +240,7 @@
 
     <ImageView
         android:id="@+id/imageView16"
-        android:layout_width="385dp"
+        android:layout_width="match_parent"
         android:layout_height="352dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -271,14 +278,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="244dp"
         android:fontFamily="@font/comic"
         android:text="Login"
         android:textColor="@color/black"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+        app:layout_constraintTop_toTopOf="@+id/guideline14"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
