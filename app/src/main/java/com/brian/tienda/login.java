@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 public class login extends AppCompatActivity implements Iinten{
     EditText correolog, contralog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +43,17 @@ public class login extends AppCompatActivity implements Iinten{
             String contrasena = contralog.getText().toString();
             Matcher m = p.matcher(correo);
             Matcher M = c.matcher(contrasena);
-                if( correo.isEmpty()){
+                if( correo.isEmpty() && contrasena.isEmpty()){
 
+
+                    showError(contralog, "cotraseña no puede ir vacio");
                 showError(correolog, "correo no puede ir vacio");
+
 
             }else if(!m.find()){
 
                     showError(correolog, "correo invalido");
-
+                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -58,12 +62,12 @@ public class login extends AppCompatActivity implements Iinten{
 
 
                     showError(contralog, "contrasena invalida");
-                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG);
+                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
 
 
             }else if (!M.find()){
 
-                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG);
+                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
                     showError(contralog, "contrasena invalida");
 
                 }
