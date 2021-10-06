@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyan"
+    android:background="?attr/colorPrimary"
     tools:context="com.brian.tienda.singups">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,21 +20,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.button.MaterialButton
-
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:id="@+id/materialButton2"
             android:layout_width="335dp"
             android:layout_height="73dp"
             android:fontFamily="@font/comic"
             android:onClick="viewsR"
             android:text="Sing up"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton3"
-            app:strokeColor="@color/black">
+            app:layout_constraintTop_toBottomOf="@+id/materialButton3">
 
         </com.google.android.material.button.MaterialButton>
 
@@ -48,14 +48,14 @@
             android:fontFamily="@font/comic"
             android:onClick="viewsL"
             android:text="loging"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:strokeColor="@color/black">
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         </com.google.android.material.button.MaterialButton>
 
@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic"
         android:text="computec"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,7 +159,7 @@
         android:layout_marginBottom="72dp"
         android:fontFamily="@font/regular"
         android:text="tienda de tecnologia"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"

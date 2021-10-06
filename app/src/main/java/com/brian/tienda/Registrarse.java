@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.tienda.R;
@@ -15,6 +17,7 @@ import java.util.regex.Pattern;
 
 public class Registrarse extends AppCompatActivity {
     EditText usuario, correo, pass;
+    Spinner roles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,10 @@ public class Registrarse extends AppCompatActivity {
         correo = findViewById(R.id.correo);
         pass = findViewById(R.id.pass);
         usuario.requestFocus();
+        roles=findViewById(R.id.rol);
+
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.rol, android.R.layout.simple_spinner_item);
+        roles.setAdapter(adapter);
     }
 
     public void views(View view) {

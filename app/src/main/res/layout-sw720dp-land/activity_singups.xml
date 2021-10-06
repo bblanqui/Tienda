@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.button.MaterialButton
-
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:id="@+id/materialButton2"
             android:layout_width="600dp"
             android:layout_height="100dp"

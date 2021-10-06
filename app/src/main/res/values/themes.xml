@@ -16,8 +16,6 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="CustomOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">?attr/colorOnPrimary</item>
-        <item name="android:textColorHint">?attr/colorOnPrimary</item>
-        <item name="hintTextColor">?attr/colorOnPrimary</item>
+
     </style>
 </resources>

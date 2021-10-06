@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyan"
+    android:background="?attr/colorPrimary"
     tools:context="com.brian.tienda.Registrarse">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="800dp"
 
         android:background="@drawable/curvas"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,44 +22,97 @@
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/textInputLayouts"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:hint="Usuario"
-            app:helperTextEnabled="true"
-            app:helperText="8 caracteres sin espacios en blanco"
-            app:helperTextTextColor="@android:color/darker_gray"
+            android:layout_width="521dp"
+            android:layout_height="125dp"
+            android:hint="correo@example.com"
             android:textColorHint="@android:color/darker_gray"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/black"
             app:counterEnabled="true"
             app:counterMaxLength="70"
             app:counterTextColor="@android:color/darker_gray"
             app:endIconMode="clear_text"
-            app:endIconTint="@color/black"
             app:hintEnabled="true"
-            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:startIconDrawable="@drawable/correo"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:endIconTint="?attr/colorOnPrimary"
+            app:hintTextColor="?attr/colorOnPrimary"
+            app:startIconTint="@android:color/darker_gray">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic"
+                android:inputType="textEmailAddress"
+
+                android:textSize="20sp"
+                app:hintTextColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColorLink="?attr/colorOnPrimary"
+                android:textCursorDrawable="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHighlight="?attr/colorOnPrimary">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="521dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="48dp"
+            android:hint="usuario"
+            android:textColorHint="@android:color/darker_gray"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="70"
+            app:counterTextColor="@android:color/darker_gray"
+            app:endIconMode="clear_text"
+
+            app:helperText="8 caracteres sin espacios en blanco"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@android:color/darker_gray"
+            app:hintEnabled="true"
+
             app:layout_constraintBottom_toTopOf="@+id/textInputLayouts"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintHorizontal_bias="0.519"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3"
             app:startIconDrawable="@drawable/user"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:endIconTint="?attr/colorOnPrimary"
+            app:hintTextColor="?attr/colorOnPrimary"
             app:startIconTint="@android:color/darker_gray">
 
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usuario"
-                android:layout_width="609dp"
-                android:layout_height="109dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
                 android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="48sp"
-                app:hintTextColor="@color/black">
+                android:textSize="20sp"
+                app:hintTextColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColorLink="?attr/colorOnPrimary"
+                android:textCursorDrawable="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHighlight="?attr/colorOnPrimary">
 
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -70,46 +123,89 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="521dp"
+            android:layout_height="125dp"
             android:hint="password"
-            app:helperTextEnabled="true"
-            app:helperText="8 caracteres sin espacios en blanco"
-            app:helperTextTextColor="@android:color/darker_gray"
             android:textColorHint="@android:color/darker_gray"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/black"
+
             app:counterEnabled="true"
             app:counterMaxLength="70"
             app:counterTextColor="@android:color/darker_gray"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/black"
+
+            app:helperText="8 caracteres sin espacios en blanco"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@android:color/darker_gray"
             app:hintEnabled="true"
-            app:hintTextColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton2"
+
+            app:layout_constraintBottom_toTopOf="@+id/rol"
             app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="@+id/guideline16"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayouts"
             app:startIconDrawable="@drawable/key"
+            app:boxStrokeColor="?attr/colorOnPrimary"
+            app:endIconTint="?attr/colorOnPrimary"
+            app:hintTextColor="?attr/colorOnPrimary"
             app:startIconTint="@android:color/darker_gray">
 
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/pass"
-                android:layout_width="609dp"
-                android:layout_height="109dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/comic"
                 android:inputType="textPassword"
-                android:textColor="@color/black"
-                android:textSize="48sp"
-                app:hintTextColor="@color/black">
+
+                android:textSize="20sp"
+                app:hintTextColor="?attr/colorOnPrimary"
+                android:textColorHint="?attr/colorOnPrimary"
+                android:textColorLink="?attr/colorOnPrimary"
+                android:textCursorDrawable="?attr/colorOnPrimary"
+                android:textColor="?attr/colorOnPrimary"
+                android:textColorHighlight="?attr/colorOnPrimary">
 
 
             </com.google.android.material.textfield.TextInputEditText>
 
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/rol"
+            android:layout_width="161dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginRight="180dp"
+            app:layout_constraintBottom_toTopOf="@+id/materialButton2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"></Spinner>
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/materialButton2"
+            android:layout_width="500dp"
+            android:layout_height="120dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/comic"
+            android:onClick="validaciones"
+            android:text="Registrarse"
+            android:textSize="16sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline18"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/rol"
+            android:textColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorOnPrimary">
+
+        </com.google.android.material.button.MaterialButton>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline16"
@@ -140,7 +236,7 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_end="17dp"
+            app:layout_constraintGuide_end="25dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,73 +256,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-
-            android:id="@+id/materialButton2"
-            android:layout_width="609dp"
-            android:layout_height="109dp"
-            android:onClick="validaciones"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/comic"
-            android:text="Registrarse"
-            android:textColor="@color/black"
-            android:textSize="48sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline18"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-            app:strokeColor="@color/black">
-
-        </com.google.android.material.button.MaterialButton>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayouts"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="correo@example.com"
-            android:textColorHint="@android:color/darker_gray"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeColor="@color/black"
-            app:counterEnabled="true"
-            app:counterMaxLength="70"
-            app:counterTextColor="@android:color/darker_gray"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/black"
-            app:hintEnabled="true"
-            app:hintTextColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-            app:layout_constraintEnd_toStartOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="@+id/guideline16"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-            app:startIconDrawable="@drawable/correo"
-            app:startIconTint="@android:color/darker_gray">
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/correo"
-                android:layout_width="609dp"
-                android:layout_height="109dp"
-                android:fontFamily="@font/comic"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:textSize="48sp"
-                app:hintTextColor="@color/black">
-
-
-            </com.google.android.material.textfield.TextInputEditText>
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
 
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
@@ -234,7 +269,7 @@
         android:onClick="views"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
@@ -247,23 +282,27 @@
         android:layout_marginLeft="2dp"
         android:fontFamily="@font/comic"
         android:text="Registro"
-        android:textColor="@color/black"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline19"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline20"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="429dp"
-        android:layout_height="308dp"
+        android:layout_width="785dp"
+        android:layout_height="537dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/guideline19"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_undraw_my_app_re_gxtj" />
@@ -280,7 +319,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="233dp"
+        app:layout_constraintGuide_begin="108dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -295,8 +334,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent=".12"
+        app:layout_constraintGuide_begin="83dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

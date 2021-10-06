@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyan"
+    android:background="?attr/colorPrimary"
     tools:context="com.brian.tienda.getstart">
 
     <ImageView
@@ -26,7 +26,7 @@
         android:fontFamily="@font/comic"
         android:gravity="center"
         android:text="@string/get_started"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline23"
         app:layout_constraintEnd_toEndOf="parent"

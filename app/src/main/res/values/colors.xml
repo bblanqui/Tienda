@@ -7,5 +7,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cyan">#00e5ff</color>
     <color name="blanco">#FFFFFFFF</color>
-
+    <color name="mtrl_textinput_default_box_stroke_color">#FF018786</color>
 </resources>

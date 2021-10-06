@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rol">
+        <item>rol</item>
+        <item>admin</item>
+        <item>vendedor</item>
+        <item>cliente</item>
+    </string-array>
+</resources>

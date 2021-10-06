@@ -27,14 +27,15 @@
             android:fontFamily="@font/comic"
             android:onClick="viewsR"
             android:text="Sing up"
-            android:textColor="@color/black"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/materialButton3"
-            app:strokeColor="@color/black">
+            android:textColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorOnPrimary">
 
         </com.google.android.material.button.MaterialButton>
 
@@ -48,14 +49,14 @@
             android:fontFamily="@font/comic"
             android:onClick="viewsL"
             android:text="loging"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:strokeColor="@color/black">
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         </com.google.android.material.button.MaterialButton>
 
