@@ -47,13 +47,13 @@ public class login extends AppCompatActivity implements Iinten{
 
 
                     showError(contralog, "cotraseña no puede ir vacio");
-                showError(correolog, "correo no puede ir vacio");
+                    showError(correolog, "correo no puede ir vacio");
 
 
             }else if(!m.find()){
 
                     showError(correolog, "correo invalido");
-                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "verique @, sin espacios y el dominio", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -76,6 +76,9 @@ public class login extends AppCompatActivity implements Iinten{
 
 
                 else {
+
+
+
 
                 Intent intentdo = new Intent(this, inicio.class);
 
