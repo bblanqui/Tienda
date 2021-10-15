@@ -90,26 +90,22 @@ public class Registrarse extends AppCompatActivity {
 
         }else {
 
-            mAuth.createUserWithEmailAndPassword(correos, contrasena)
+            mAuth.createUserWithEmailAndPassword(correos,contrasena)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                               FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance()
-                                       .getCurrentUser().getUid()).setValue(usuarios,correos, contrasena)
-                                       .addOnCompleteListener(new OnCompleteListener <void>(){});
+                                Toast.makeText(Registrarse.this, "Authentication ok.",
+                                        Toast.LENGTH_SHORT).show();
+                                FirebaseUser user = mAuth.getCurrentUser();
 
-                                Intent intentdo = new Intent(Registrarse.this, inicio.class);
-
-                                startActivity(intentdo);
-                                updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
                                 Toast.makeText(Registrarse.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                updateUI(null);
+
                             }
                         }
                     });

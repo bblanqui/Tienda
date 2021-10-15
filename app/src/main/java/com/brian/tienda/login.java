@@ -1,10 +1,19 @@
 package com.brian.tienda;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.tienda.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +25,8 @@ import java.util.regex.Pattern;
 public class login extends AppCompatActivity implements Iinten{
     EditText correolog, contralog;
 
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +37,7 @@ public class login extends AppCompatActivity implements Iinten{
         correolog= findViewById(R.id.correolog);
         contralog= findViewById(R.id.contralog);
         correolog.requestFocus();
-
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -79,11 +90,25 @@ public class login extends AppCompatActivity implements Iinten{
 
 
 
+                    mAuth.signInWithEmailAndPassword(correo,contrasena)
+                            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Toast.makeText(login.this, "Authentication ok.",
+                                                Toast.LENGTH_SHORT).show();
+                                        FirebaseUser user = mAuth.getCurrentUser();
 
-                Intent intentdo = new Intent(this, inicio.class);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(login.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
 
-                startActivity(intentdo);
-
+                                    }
+                                }
+                            });
             }
 
     }
