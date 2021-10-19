@@ -108,7 +108,7 @@ public class Registrarse extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                                 user.put("usuario", usuarios);
                                 user.put("correo", correos);
-                                user.put("rol", roles.getAutofillValue().toString());
+                                user.put("rol", roles.getSelectedItem().toString());
                                db.collection("dbcomputec")
                                         .add(user)
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
