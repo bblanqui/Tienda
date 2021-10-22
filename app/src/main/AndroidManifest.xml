@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tienda">
+    package="com.example.tienda" >
 
     <application
         android:allowBackup="true"
@@ -8,24 +8,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tienda">
-        <activity android:name="com.brian.tienda.splash"
-            android:exported="true">
+        android:theme="@style/Theme.Tienda" >
+        <activity
+            android:name="com.brian.tienda.productList"
+            android:exported="true" />
+        <activity
+            android:name="com.brian.tienda.splash"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name="com.brian.tienda.inicio" />
         <activity android:name="com.brian.tienda.Registrarse" />
         <activity android:name="com.brian.tienda.login" />
         <activity android:name="com.brian.tienda.singups" />
-
         <activity
             android:name="com.brian.tienda.getstart"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

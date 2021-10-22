@@ -53,7 +53,7 @@ public class Registrarse extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.rol, android.R.layout.simple_spinner_item);
         roles.setAdapter(adapter);
-       db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         user = new HashMap<>();
 
     }
