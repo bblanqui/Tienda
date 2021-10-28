@@ -1,10 +1,15 @@
 package com.brian.tienda.entities;
 
-public class ProductEntity {
+import com.google.firebase.firestore.DocumentId;
+
+import java.io.Serializable;
+
+public class ProductEntity  implements Serializable {
+    @DocumentId
     private  String id;
     private String name;
     private double price;
-    private int stock;
+    private double stock;
     private String descripcion;
 
     public String getId() {
@@ -31,11 +36,11 @@ public class ProductEntity {
         this.price = price;
     }
 
-    public int getStock() {
+    public double getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(double stock) {
         this.stock = stock;
     }
 

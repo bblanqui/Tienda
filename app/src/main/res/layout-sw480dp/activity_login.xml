@@ -37,7 +37,7 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:id="@+id/materialButton"
+            android:id="@+id/delete"
             android:layout_width="320dp"
             android:layout_height="70dp"
             android:onClick="validators"

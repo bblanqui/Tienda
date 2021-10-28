@@ -25,17 +25,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:text="TextView" />
+                android:layout_marginRight="10dp" />
 
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/prices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:text="TextView" />
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:id="@+id/stock"
@@ -43,8 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:text="TextView" />
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:id="@+id/descri"
@@ -52,31 +49,61 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:text="TextView" />
+                android:layout_marginRight="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/editar"
-                    android:textColor="?attr/colorOnPrimary" />
+                <com.google.android.material.button.MaterialButton
 
-                <Button
                     android:id="@+id/delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="162dp"
+                    android:layout_height="63dp"
                     android:layout_margin="5dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/comic"
+                    android:onClick="validators"
+                    android:text="delete"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintHorizontal_bias="0.47"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                    app:strokeColor="?attr/colorOnPrimary">
+
+                </com.google.android.material.button.MaterialButton>
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/edit"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="24dp"
                     android:layout_weight="1"
-                    android:text="@string/eliminar"
-                    android:textColor="?attr/colorOnPrimary" />
+                    android:fontFamily="@font/comic"
+                    android:onClick="validators"
+                    android:text="edit"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintHorizontal_bias="0.47"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                    app:strokeColor="?attr/colorOnPrimary">
+
+                </com.google.android.material.button.MaterialButton>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -36,7 +36,7 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:id="@+id/materialButton"
+            android:id="@+id/delete"
             android:layout_width="600dp"
             android:layout_height="100dp"
             android:onClick="validators"
@@ -72,7 +72,7 @@
             app:counterTextColor="@android:color/darker_gray"
             app:endIconMode="password_toggle"
             app:hintEnabled="true"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton"
+            app:layout_constraintBottom_toTopOf="@+id/delete"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="@+id/guideline9"

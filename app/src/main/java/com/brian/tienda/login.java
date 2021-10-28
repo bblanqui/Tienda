@@ -4,6 +4,8 @@ import static android.service.controls.ControlsProviderService.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.brian.tienda.entities.ProductEntity;
 import com.example.tienda.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -99,7 +101,8 @@ public class login extends AppCompatActivity implements Iinten{
                                         Toast.makeText(login.this, "Authentication ok.",
                                                 Toast.LENGTH_SHORT).show();
                                         FirebaseUser user = mAuth.getCurrentUser();
-
+                                        Intent intentdo = new Intent(getApplicationContext(), productList.class);
+                                        startActivity(intentdo);
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
