@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.brian.tienda.editar">
+    tools:context="com.brian.tienda.agregar">
 
     <TextView
         android:id="@+id/textView6"
@@ -14,7 +14,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginBottom="14dp"
         android:fontFamily="@font/comic"
-        android:text="Editar Producto"
+        android:text="Agregar Producto"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
@@ -253,7 +253,7 @@
 
             <com.google.android.material.button.MaterialButton
 
-                android:id="@+id/update"
+                android:id="@+id/add"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
@@ -262,8 +262,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/comic"
-                android:onClick="updatep"
-                android:text="Actualizar"
+                android:onClick="add"
+                android:text="agregar"
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
                 app:cornerRadius="10dp"

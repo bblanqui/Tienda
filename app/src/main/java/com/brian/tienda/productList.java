@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class productList extends AppCompatActivity {
+public class productList extends AppCompatActivity implements Iinten{
     private ActivityProductListBinding productlistbinding;
     private FirebaseFirestore db;
     ProductAdacter productAdacter;
@@ -62,5 +63,12 @@ public class productList extends AppCompatActivity {
                 productAdacter.notifyDataSetChanged();
             }
         });
+    }
+
+
+    public void agregar (View view) {
+        Intent intentdo = new Intent(this, agregar.class);
+
+        startActivity(intentdo);
     }
 }
