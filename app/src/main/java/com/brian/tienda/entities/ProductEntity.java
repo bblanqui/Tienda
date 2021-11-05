@@ -11,6 +11,15 @@ public class ProductEntity  implements Serializable {
     private double price;
     private double stock;
     private String descripcion;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getId() {
         return id;
