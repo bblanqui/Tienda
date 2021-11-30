@@ -3,5 +3,6 @@
     <string name="get_started">GET STARTED</string>
     <string name="editar">editar</string>
     <string name="eliminar">eliminar</string>
+    <string name="user_preference_key">user_preference_key</string>
 
 </resources>

@@ -101,8 +101,7 @@ public class Registrarse extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(Registrarse.this, "Authentication ok.",
-                                        Toast.LENGTH_SHORT).show();
+
                                 user.put("usuario", usuarios);
                                 user.put("correo", correos);
                                 user.put("rol", roles.getSelectedItem().toString());
@@ -112,7 +111,11 @@ public class Registrarse extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
                                                 Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                Toast.makeText(Registrarse.this, "Authentication ok.",
+                                                        Toast.LENGTH_SHORT).show();
+
                                             }
+
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
@@ -120,6 +123,9 @@ public class Registrarse extends AppCompatActivity {
                                                 Log.w(TAG, "Error adding document", e);
                                             }
                                         });
+
+
+
 
                             } else {
                                 // If sign in fails, display a message to the user.

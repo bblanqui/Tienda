@@ -13,12 +13,13 @@ public class ProductEntity  implements Serializable {
     private String descripcion;
     private String imageUrl;
 
+
+
+    public void setImageUrl(String imageUrls) {
+        this.imageUrl = imageUrls;
+    }
     public String getImageUrl() {
         return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public String getId() {

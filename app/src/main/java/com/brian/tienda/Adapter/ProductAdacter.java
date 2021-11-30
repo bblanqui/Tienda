@@ -4,16 +4,21 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.brian.tienda.editar;
 import com.brian.tienda.entities.ProductEntity;
+import com.brian.tienda.splash;
+import com.bumptech.glide.Glide;
+import com.example.tienda.R;
 import com.example.tienda.databinding.ProductItemBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,6 +34,7 @@ public class ProductAdacter extends RecyclerView.Adapter<ProductAdacter.ProductV
     private ProductItemBinding productItemBinding;
     private ArrayList<ProductEntity> products;
     private FirebaseFirestore db;
+    private splash roles;
    public ProductAdacter(Context context, ArrayList<ProductEntity> products, FirebaseFirestore db){
 
        this.context = context;
@@ -51,6 +57,25 @@ public class ProductAdacter extends RecyclerView.Adapter<ProductAdacter.ProductV
       holder.itemBinding.prices.setText(String.valueOf(product.getPrice()));
       holder.itemBinding.stock.setText(String.valueOf(product.getStock()));
       holder.itemBinding.descri.setText(product.getDescripcion());
+      Glide.with(context)
+                .load(product.getImageUrl())
+                .placeholder(R.drawable.ic_images_rafiki)
+                .error(R.drawable.imagen)
+                .circleCrop()
+                .into(holder.itemBinding.imageView18);
+
+
+
+
+
+
+
+      splash r = new splash();
+
+        if(r.rol(context).equals("admin")){
+            holder.itemBinding.delete.setVisibility(View.GONE);
+        }
+
       AlertDialog.Builder builder = new AlertDialog.Builder(context);
       builder.setPositiveButton("aceptar", new DialogInterface.OnClickListener() {
           @Override
@@ -59,7 +84,7 @@ public class ProductAdacter extends RecyclerView.Adapter<ProductAdacter.ProductV
                       new OnSuccessListener<Void>() {
                           @Override
                           public void onSuccess(Void unused) {
-                              Toast.makeText(context, "data delete", Toast.LENGTH_LONG).show();
+                              Toast.makeText(context, "eliminado correctamente", Toast.LENGTH_LONG).show();
                               products.remove(holder.getAdapterPosition());
                               notifyDataSetChanged();
                           }
