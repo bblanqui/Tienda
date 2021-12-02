@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.brian.tienda.editar;
 import com.brian.tienda.entities.ProductEntity;
+import com.brian.tienda.getstart;
+import com.brian.tienda.login;
+import com.brian.tienda.productList;
 import com.brian.tienda.splash;
 import com.bumptech.glide.Glide;
 import com.example.tienda.R;
@@ -77,6 +81,25 @@ public class ProductAdacter extends RecyclerView.Adapter<ProductAdacter.ProductV
             holder.itemBinding.edit.setVisibility(View.INVISIBLE);
             holder.itemBinding.imageView15.setVisibility(View.INVISIBLE);
         }
+
+
+
+      holder.itemBinding.cerrar.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 SharedPreferences sharedPref = context.getSharedPreferences(
+                         context.getString(R.string.user_preference_key), Context.MODE_PRIVATE);
+                 SharedPreferences.Editor editor = sharedPref.edit();
+                editor.clear();
+                editor.apply();
+
+                 Intent intent = new Intent(context, login.class);
+                 context.startActivity(intent);
+
+
+
+             }
+         });
 
       AlertDialog.Builder builder = new AlertDialog.Builder(context);
       builder.setPositiveButton("aceptar", new DialogInterface.OnClickListener() {

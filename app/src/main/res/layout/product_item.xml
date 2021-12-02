@@ -29,12 +29,21 @@
 
                 <ImageView
                     android:id="@+id/imageView15"
-                    android:layout_width="60dp"
+                    android:layout_width="176dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:onClick="agregar"
                     app:srcCompat="@drawable/ic_action_name" />
+
+                <ImageView
+                    android:id="@+id/cerrar"
+                    android:layout_width="176dp"
+                    android:layout_height="32dp"
+
+                    android:layout_marginEnd="360dp"
+                    android:layout_marginBottom="8dp"
+                    app:srcCompat="@drawable/ic_enter" />
 
             </LinearLayout>
 

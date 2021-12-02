@@ -80,7 +80,7 @@ public class AddProduct extends AppCompatActivity {
 
     public void uploadImage(){
        prograssDialog = new ProgressDialog(this);
-       prograssDialog.setTitle("agregamdo prodcto");
+       prograssDialog.setTitle("agregando prodcto");
        prograssDialog.show();
 
        // obtener fecha  y organizar el formato
