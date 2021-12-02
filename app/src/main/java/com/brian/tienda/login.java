@@ -60,11 +60,11 @@ public class login extends AppCompatActivity implements Iinten{
 
     public void  validators (View view){
             Pattern p = Pattern.compile("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-            Pattern c = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
+
             String correo = correolog.getText().toString();
             String contrasena = contralog.getText().toString();
             Matcher m = p.matcher(correo);
-            Matcher M = c.matcher(contrasena);
+
                 if( correo.isEmpty() && contrasena.isEmpty()){
 
 
@@ -80,22 +80,14 @@ public class login extends AppCompatActivity implements Iinten{
 
 
 
-                else if(contrasena.isEmpty() || contrasena.length() < 8 || Pattern.compile(" {1,}").matcher(contralog.getText().toString()).find() ){
+                else if(contrasena.isEmpty() || contrasena.length() < 8 ){
 
 
                     showError(contralog, "contrasena invalida");
-                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "almenos 8 caracteres y  sin espacios", Toast.LENGTH_LONG).show();
 
 
-            }else if (!M.find()){
-
-                    Toast.makeText(this, "almenos un dijito, un caracter espacial @ y sin espacios", Toast.LENGTH_LONG).show();
-                    showError(contralog, "contrasena invalida");
-
-                }
-
-
-
+            }
 
                 else {
 
@@ -116,9 +108,6 @@ public class login extends AppCompatActivity implements Iinten{
                                                                 users= documentSnapshots.toObject(ShareEntity.class);
                                                                 break;
                                                             }
-
-                                                            Toast.makeText(login.this, "ingreso correcto",
-                                                                    Toast.LENGTH_SHORT).show();
                                                             saveUserPreferences(getApplicationContext());
                                                             Intent intentdo = new Intent(getApplicationContext(), productList.class);
 
@@ -132,9 +121,8 @@ public class login extends AppCompatActivity implements Iinten{
 
 
                                     } else {
-                                        // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(login.this, "Authentication failed.",
+                                        Toast.makeText(login.this, "valide usuario y contraseña",
                                                 Toast.LENGTH_SHORT).show();
 
                                     }

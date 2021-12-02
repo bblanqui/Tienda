@@ -83,6 +83,7 @@ public class agregar extends AppCompatActivity {
                             agregarBinding.imgProduct.setImageURI(uri);
                         }
                     }else {
+
                         Toast.makeText(getApplicationContext(), "imagen no seleccionada", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -91,43 +92,7 @@ public class agregar extends AppCompatActivity {
     );
 
     public void uploadImage(View view){
-        prograssDialog = new ProgressDialog(this);
-        prograssDialog.setTitle("agregamdo prodcto");
-        prograssDialog.show();
 
-        // obtener fecha  y organizar el formato
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy/_MM_dd_HH_mm_ss",
-                Locale.US
-        );
-        //OBTENER LA FECHA
-        Date dateNow = new Date();
-        String filenameImage = dateFormat.format(dateNow);
-        storageReference = FirebaseStorage.getInstance().getReference(
-                "products/"+filenameImage);
-
-        UploadTask uploadTask = storageReference.putFile(imageUri);
-        Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-            @Override
-            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                if (!task.isSuccessful()){
-                    throw task.getException();
-                }
-                return  storageReference.getDownloadUrl();
-            }
-        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-            @Override
-            public void onComplete(@NonNull Task<Uri> task) {
-                if (task.isSuccessful()){
-                    downloadUrl= task.getResult();
-                    addProduct ();
-                }
-            }
-        });
-    }
-
-
-    public  void  addProduct (){
 
         if( agregarBinding.names.getText().toString().isEmpty()){
 
@@ -141,39 +106,76 @@ public class agregar extends AppCompatActivity {
 
         }else  if( agregarBinding.descripcions.getText().toString().isEmpty()){
             showError(agregarBinding.descripcions, "descricion no puede ir vacia");
+        }else if(imageUri==null){
+
+            Toast.makeText(getApplicationContext(), "por favor seleccionar una imagen", Toast.LENGTH_LONG).show();
         }else {
-            user.put("descripcion", agregarBinding.descripcions.getText().toString());
-            user.put("name", agregarBinding.names.getText().toString());
-            user.put("price",  Double.parseDouble(agregarBinding.prices.getText().toString()));
-            user.put("stock", Double.parseDouble(agregarBinding.stocks.getText().toString()));
-            user.put("imageUrl",downloadUrl.toString());
-            db.collection("products")
-                    .add(user)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(getApplicationContext(), "Producto agregado", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getApplicationContext(), productList.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error adding document", e);
-                        }
-                    });
+            prograssDialog = new ProgressDialog(this);
+            prograssDialog.setTitle("agregando producto");
+            prograssDialog.show();
+
+            // obtener fecha  y organizar el formato
+            SimpleDateFormat dateFormat = new SimpleDateFormat(
+                    "yyyy/_MM_dd_HH_mm_ss",
+                    Locale.US
+            );
+            //OBTENER LA FECHA
+            Date dateNow = new Date();
+            String filenameImage = dateFormat.format(dateNow);
+            storageReference = FirebaseStorage.getInstance().getReference(
+                    "products/"+filenameImage);
+
+            UploadTask uploadTask = storageReference.putFile(imageUri);
+            Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()){
+                        throw task.getException();
+                    }
+                    return  storageReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()){
+                        downloadUrl= task.getResult();
+
+                           user.put("descripcion", agregarBinding.descripcions.getText().toString());
+                           user.put("name", agregarBinding.names.getText().toString());
+                           user.put("price",  Double.parseDouble(agregarBinding.prices.getText().toString()));
+                           user.put("stock", Double.parseDouble(agregarBinding.stocks.getText().toString()));
+                           user.put("imageUrl",downloadUrl.toString());
+                           db.collection("products")
+                                   .add(user)
+                                   .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                       @Override
+                                       public void onSuccess(DocumentReference documentReference) {
+                                           Intent intent = new Intent(getApplicationContext(), productList.class);
+                                           startActivity(intent);
+                                           finish();
+                                       }
+                                   })
+                                   .addOnFailureListener(new OnFailureListener() {
+                                       @Override
+                                       public void onFailure(@NonNull Exception e) {
+                                           Log.w(TAG, "Error adding document", e);
+                                       }
+                                   });
+
+                       }
+                    }
+
+            });
 
         }
 
 
 
 
-
-
-
     }
+
+
+
 
     public  void showError(EditText entrada, String texto){
 

@@ -11,29 +11,86 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="14dp"
         android:fontFamily="@font/comic"
         android:text="Agregar Producto"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toTopOf="@+id/imgProduct"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="100dp"
+        android:layout_height="99dp"
+        app:layout_constraintBottom_toTopOf="@+id/addimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/ic_images_rafiki" />
+
+    <com.google.android.material.button.MaterialButton
+
+        android:id="@+id/add"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/comic"
+        android:onClick="uploadImage"
+        android:text="agregar producto"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="16sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="1.0"
+        app:strokeColor="?attr/colorOnPrimary">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+
+        android:id="@+id/addimg"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/comic"
+        android:onClick="pickimage"
+        android:text="agregar imagen"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="16sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProduct"
+        app:strokeColor="?attr/colorOnPrimary">
+
+    </com.google.android.material.button.MaterialButton>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/addimg">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -250,65 +307,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <com.google.android.material.button.MaterialButton
-
-                android:id="@+id/add"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/comic"
-                android:onClick="uploadImage"
-                android:text="agregar"
-                android:textColor="?attr/colorOnPrimary"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline18"
-                app:layout_constraintEnd_toStartOf="@+id/guideline17"
-                app:layout_constraintStart_toStartOf="@+id/guideline16"
-                app:layout_constraintTop_toBottomOf="@+id/rol"
-                app:strokeColor="?attr/colorOnPrimary">
-
-            </com.google.android.material.button.MaterialButton>
-
-            <ImageView
-                android:id="@+id/imgProduct"
-                android:layout_width="100dp"
-                android:layout_height="99dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.51"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_images_rafiki" />
-
-            <com.google.android.material.button.MaterialButton
-
-                android:id="@+id/addimg"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/comic"
-                android:onClick="pickimage"
-                android:text="img add"
-                android:textColor="?attr/colorOnPrimary"
-                android:textSize="16sp"
-                app:cornerRadius="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline18"
-                app:layout_constraintEnd_toStartOf="@+id/guideline17"
-                app:layout_constraintStart_toStartOf="@+id/guideline16"
-                app:layout_constraintTop_toBottomOf="@+id/rol"
-                app:strokeColor="?attr/colorOnPrimary">
-
-            </com.google.android.material.button.MaterialButton>
 
         </LinearLayout>
 

@@ -3,7 +3,9 @@ package com.brian.tienda;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.brian.tienda.entities.ShareEntity;
 import com.example.tienda.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,6 +25,8 @@ import com.google.firebase.auth.FirebaseAuth;
 //import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +41,7 @@ public class Registrarse extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseFirestore db;
     Map<String, String> user;
+    ShareEntity users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +51,7 @@ public class Registrarse extends AppCompatActivity {
         pass = findViewById(R.id.pass);
         usuario.requestFocus();
         roles=findViewById(R.id.rol);
-        // Initialize Firebase Auth
+
         mAuth = FirebaseAuth.getInstance();
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.rol, android.R.layout.simple_spinner_item);
@@ -110,9 +116,29 @@ public class Registrarse extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                             @Override
                                             public void onSuccess(DocumentReference documentReference) {
-                                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                                                Toast.makeText(Registrarse.this, "Authentication ok.",
-                                                        Toast.LENGTH_SHORT).show();
+                                                db.collection("dbcomputec").whereEqualTo("correo", correos )
+                                                        .get()
+                                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                                if (task.isSuccessful()){
+                                                                    for (QueryDocumentSnapshot documentSnapshots: task.getResult()){
+                                                                        users= documentSnapshots.toObject(ShareEntity.class);
+                                                                        break;
+                                                                    }
+                                                                    saveUserPreferences(getApplicationContext());
+                                                                    Intent intentdo = new Intent(getApplicationContext(), productList.class);
+
+                                                                    startActivity(intentdo);
+
+
+                                                                }
+
+                                                            }
+                                                        });
+                                                Intent intentdo = new Intent(getApplicationContext(), productList.class);
+
+                                                startActivity(intentdo);
 
                                             }
 
@@ -151,6 +177,22 @@ public class Registrarse extends AppCompatActivity {
 
 
     }
+
+    public void saveUserPreferences(Context context){
+
+
+
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                getString(R.string.user_preference_key), Context.MODE_PRIVATE);
+        // permite escribir data en las shared preferences
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("status", true);
+        editor.putString("correo", users.getCorreo());
+        editor.putString("rol", users.getRol());
+        editor.putString("usuario", users.getUsuario());
+        editor.commit();
+    }
+
 
 
 }

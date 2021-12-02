@@ -72,8 +72,10 @@ public class ProductAdacter extends RecyclerView.Adapter<ProductAdacter.ProductV
 
       splash r = new splash();
 
-        if(r.rol(context).equals("admin")){
-            holder.itemBinding.delete.setVisibility(View.GONE);
+        if(r.rol(context).equals("cliente")){
+            holder.itemBinding.delete.setVisibility(View.INVISIBLE);
+            holder.itemBinding.edit.setVisibility(View.INVISIBLE);
+            holder.itemBinding.imageView15.setVisibility(View.INVISIBLE);
         }
 
       AlertDialog.Builder builder = new AlertDialog.Builder(context);
